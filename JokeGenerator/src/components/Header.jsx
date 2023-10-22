@@ -1,27 +1,31 @@
 import React from 'react'
-import Favorites from '../views/Favorites'
-import Alljokes from '../views/Alljokes'
+import './Header.css'
+import { useNavigate } from 'react-router-dom'
 
 function Header() {
+
+    const navigate = useNavigate()
+
   return (
-    <div>
-        <section>
+    <div className='header'>
+        <section className='logoSec'>
             <article>
-                <h1>Joke Generator</h1>
+                <h1>JOKE GENERATOR</h1>
                 <img src="src/assets/Group (1).png" alt="logoIcon" />
             </article>
         </section>
-        <section>
+        <section className='navSec'>
             <nav>
                 <ul>
                     <li>
-                        <button>All Jokes</button>
+                        <button onClick={() => navigate("/alljokes")}>All Jokes</button>
                     </li>
                     <li>
-                        <button>Favorites</button>
+                        <button onClick={() => navigate("/favorites")}>Favorites</button>
                     </li>
-                    <li>
+                    <li className='lightMode'>
                         <img src="src/assets/Vector (6).png" alt="sun" />
+                        <div className='circle'></div>
                         <img src="src/assets/Vector (5).png" alt="moon" />
                     </li>
                 </ul>

@@ -1,0 +1,68 @@
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 3rem;
+    box-shadow: 0 5px 40px;
+}
+
+.logoSec{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.logoSec article{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.logoSec article h1{
+    color: white;
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.navSec{
+    width: 100%;
+}
+
+.navSec ul{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6rem;
+}
+
+.navSec ul li button{
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.navSec .lightMode{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    border: solid;
+    border-radius: 100px;
+    padding: 0.8em;
+    cursor: pointer;
+    position: relative;
+}
+
+.navSec .circle{
+    background-color: rgb(136, 136, 136);
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 7px;
+    border-radius: 100px;
+    z-index: -20;
+}
