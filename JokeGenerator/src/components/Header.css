@@ -18,6 +18,7 @@
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
+    cursor: pointer;
 }
 
 .logoSec article h1{
@@ -66,3 +67,68 @@
     border-radius: 100px;
     z-index: -20;
 }
+
+body.dark-mode,body.dark-mode h1, body.dark-mode li button{
+    background-color: white;
+    color: black;
+}
+
+.switch .circle{
+    background-color: #FFE500;
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    left: 7px;
+    border-radius: 100px;
+    z-index: -20;
+}
+
+@keyframes slideIn {
+    0% {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .slide-in {
+    animation: slideIn 0.5s ease;
+  }
+  
+@keyframes slideOut {
+    0% {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .slide-out {
+    animation: slideOut 0.5s ease;
+  }
+
+/*@keyframes slideDont {
+    0% {
+      transform: translateX(0px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .slide-dont {
+    animation: slideDont 0.5s ease;
+  } */
+  
+  
+  
+
+
