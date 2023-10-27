@@ -1,0 +1,60 @@
+.filterPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.filterTitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filterOptions{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.filterOptions article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Style the select element */
+select {
+    width: 200px;
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('src/assets/Polygon3.png');
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding-right: 30px; /* Adjust padding to make room for the arrow */
+}
+
+/* Style the options within the dropdown */
+select option {
+  background-color: #fff;
+}
+
+/* Style the dropdown arrow (may not work in all browsers) */
+select::-ms-expand {
+  display: none;
+}
+
+/* Style the dropdown arrow (for modern browsers) */
+select::-webkit-select {
+  appearance: none;
+}
+
+
