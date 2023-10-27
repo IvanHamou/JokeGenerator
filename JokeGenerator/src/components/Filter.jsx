@@ -35,6 +35,9 @@ function Filter() {
           <input type="text" />
         </article>
       </section>
+      <section className='hrSec'>
+        <hr />
+      </section>
     </div>
   )
 }

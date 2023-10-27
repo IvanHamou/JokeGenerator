@@ -2,20 +2,24 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 2rem;
+    gap: 4rem;
     margin-top: 2rem;
+    color: white;
 }
 
 .filterTitle{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 2rem;
 }
 
 .filterOptions{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    font-size: 1rem;
+    gap: 2rem;
 }
 
 .filterOptions article{
@@ -26,35 +30,63 @@
     gap: 1rem;
 }
 
-/* Style the select element */
-select {
+.filterOptions select {
     width: 200px;
-    padding: 5px;
+    padding: 0.5rem;
     font-size: 1rem;
-    border: 1px solid #ccc;
-    background-color: #fff;
+    border-radius: 6px;
     appearance: none;
     -webkit-appearance: none;
-    -moz-appearance: none;
-    background-image: url('src/assets/Polygon3.png');
-    background-position: right center;
+    background-image: url('/src/assets/Polygon3.png');
+    background-position: 180px center;
+    background-size: 15px;
     background-repeat: no-repeat;
-    padding-right: 30px; /* Adjust padding to make room for the arrow */
+    outline: none;
 }
 
-/* Style the options within the dropdown */
-select option {
-  background-color: #fff;
+.filterOptions input{
+    width: 200px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    outline: none;
+
 }
 
-/* Style the dropdown arrow (may not work in all browsers) */
-select::-ms-expand {
-  display: none;
+.hrSec{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Style the dropdown arrow (for modern browsers) */
-select::-webkit-select {
-  appearance: none;
+hr{
+    width: 650px;
 }
 
+
+  /*RESPONSIVENESS*/
+
+@media only screen and (max-width: 739px) {
+    .filterOptions{
+        flex-direction: column;
+    }
+
+    hr{
+        width: 360px;
+    }
+}
+
+@media only screen and (max-width: 442px) {
+    .filterPage{
+        gap: 2rem;
+    }
+    
+    .filterTitle{
+        font-size: 1.5rem;
+    }
+
+    hr{
+        width: 250px;
+    }
+  }
 
