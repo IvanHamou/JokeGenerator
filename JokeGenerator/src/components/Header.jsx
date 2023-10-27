@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Header.css';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 
 function Header() {
     const navigate = useNavigate();
@@ -25,6 +24,11 @@ function Header() {
                 </article>
             </section>
             <section className='navSec'>
+                <article className='hamburger'>
+                    <div className='hamburgerLine'></div>
+                    <div className='hamburgerLine'></div>
+                    <div className='hamburgerLine'></div>
+                </article>
                 <nav>
                     <ul>
                         <li>
