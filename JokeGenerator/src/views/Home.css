@@ -1,0 +1,147 @@
+.mainContent{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 8rem 0;
+    padding: 0 3rem;
+    color: white;
+}
+
+.sectionA, .sectionB{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.sectionA{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.filterOptionsHome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    gap: 3rem;
+}
+
+.filterOptionsHome article, .disableGif{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.filterOptionsHome select {
+    width: 300px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url('/src/assets/Polygon3.png');
+    background-position: 280px center;
+    background-size: 15px;
+    background-repeat: no-repeat;
+    outline: none;
+}
+
+.filterOptionsHome input{
+    width: 300px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+}
+
+.filterOptionsHome button{
+    font-size: 1.2rem;
+    padding: 0.5em 2.5em;
+    border-radius: 6px;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    margin-top: 1rem;
+}
+
+.disableGif button{
+    padding: 1em 2.5em;
+    border-radius: 100px;
+    border: none;
+    position: relative;
+}
+
+.circleHome{
+    background-color: black;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 3px;
+    right: 3px;
+    border-radius: 100px;
+    z-index: 20;
+}
+
+
+.sectionB, .interact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.rating, .socialMedia{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+
+@media only screen and (max-width: 1280px) {
+    .mainContent{
+        gap: 5rem;
+    }
+
+    .sectionA, .sectionB{
+        width: 100%;
+    }
+  }
+
+@media only screen and (max-width: 772px) {
+
+    
+    .rating, .socialMedia{
+        gap: 1rem;
+    }
+    
+    .interact img{
+        width: 50px;
+    }
+}
+
+@media only screen and (max-width: 442px) {
+    
+    .filterOptionsHome select, .filterOptionsHome input{
+        width: 200px;
+        background-position: 180px center;
+    }
+
+    .filterOptionsHome button{
+        padding: 0.5em 1.5em;
+    }
+
+    .interact img{
+        width: 35px;
+    }
+  }
