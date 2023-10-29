@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Header from '../components/Header'
 import Filter from '../components/Filter'
+import JokeDisplay from '../components/JokeDisplay'
+import './Alljokes.css'
 
 function Alljokes() {
   const [isConditionMet, setIsConditionMet] = useState(true)
@@ -9,6 +11,11 @@ function Alljokes() {
     <div>
       <Header isConditionMet={isConditionMet}/>
       <Filter/>
+      <section className='jokeSection'>
+        <JokeDisplay/>
+        <JokeDisplay/>
+      </section>
+    
     </div>
   )
 }

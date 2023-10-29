@@ -1,0 +1,46 @@
+.jokeDisplay{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    color: white;
+    text-align: center;
+}
+
+.filters{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.5rem;
+}
+
+.joke{
+    font-size: 1.3rem;
+    font-weight: 200;
+}
+
+.actionBtn button{
+    font-size: 1.5rem;
+    padding: 0.5em 0.8em;
+    border-radius: 6px;
+    font-weight: 600;
+    outline: none;
+}
+
+@media only screen and (max-width: 620px) {
+
+    .filters{
+        font-size: 1rem;
+    }
+
+    .joke{
+        font-size: 1rem;
+    }
+
+    .actionBtn button{
+        font-size: 1rem;
+    }
+}
