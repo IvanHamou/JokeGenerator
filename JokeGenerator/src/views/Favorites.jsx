@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import Header from '../components/Header'
 import Filter from '../components/Filter'
+import JokeDisplay from '../components/JokeDisplay'
 
-function Favorites() {
+function Favorites({setButtonText}) {
   const [activePage, setActivePage] = useState(true)
 
 
@@ -10,6 +11,10 @@ function Favorites() {
     <div>
       <Header activePage={activePage}/>
       <Filter/>
+      <section className='jokeSection'>
+        <JokeDisplay buttonText={"Remove From Favorites"}/>
+        <JokeDisplay/>
+      </section>
     </div>
   )
 }

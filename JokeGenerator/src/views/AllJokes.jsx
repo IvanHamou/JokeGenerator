@@ -12,7 +12,7 @@ function Alljokes() {
       <Header isConditionMet={isConditionMet}/>
       <Filter/>
       <section className='jokeSection'>
-        <JokeDisplay/>
+        <JokeDisplay buttonText={"Add To Favorites"}/>
         <JokeDisplay/>
       </section>
     

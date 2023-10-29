@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './JokeDisplay.css'
 
-function JokeDisplay() {
+function JokeDisplay({buttonText}) {
+  
   return (
     <div className='jokeDisplay'>
       <section className='filters'>
@@ -13,7 +14,7 @@ function JokeDisplay() {
         <h2>Java is like Alzheimer's, it starts off slow, but eventually, your memory is gone.</h2>
       </section>
       <section className='actionBtn'>
-        <button>Remove From Favorites</button>
+        <button>{buttonText}</button>
       </section>
       <section>
         <hr />
