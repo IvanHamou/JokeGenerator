@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Header.css';
 import { useNavigate } from 'react-router-dom';
 
-function Header() {
+function Header({ isConditionMet, activePage }) {
     const navigate = useNavigate();
     const [toggleMode, setToggleMode] = useState(false);
     const [toggleMenu, setToggleMenu] = useState(false);
@@ -43,10 +43,10 @@ function Header() {
                 <nav>
                     <ul>
                         <li>
-                            <button onClick={() => navigate("/alljokes")}>All Jokes</button>
+                            <button onClick={() => navigate("/alljokes")} style={{ color: isConditionMet ? '#FFE500' : 'white' }}>All Jokes</button>
                         </li>
                         <li>
-                            <button onClick={() => navigate("/favorites")}>Favorites</button>
+                            <button onClick={() => navigate("/favorites")} style={{ color: activePage ? '#FFE500' : 'white' }}>Favorites</button>
                         </li>
                         <li className='lightMode' onClick={switchMode}>
                             <img src="src/assets/Vector (6).png" alt="sun"/>
