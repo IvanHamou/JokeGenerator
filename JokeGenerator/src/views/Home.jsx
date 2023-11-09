@@ -11,7 +11,7 @@ function Home() {
   const [language, setLanguage] = useState("")
   const [langApi, setLangApi] = useState("lang=en&")
   const [word, setWord] = useState("")
-  const [inputWord, setInputWord] = useState(""); // New state for the input value
+  const [inputWord, setInputWord] = useState("")
 
 
   function handleLangApi(event) {
@@ -19,7 +19,11 @@ function Home() {
   }
 
   function handleCategoryApi(event) {
+    if (event.target.value == "lang=de&") {
+      setCategory("German")
+    } else {
     setCategoryApi(event.target.value)
+  }
   }
 
   function handleWord(event) {
@@ -33,7 +37,7 @@ function Home() {
         console.log(data)
         setJoke(data.joke)
         setCategory(data.category)
-        handleWord({ target: { value: word } });
+        handleWord({ target: { value: word } })
         if (data.lang == "en") {
           setLanguage("English")
         } else if (data.lang == "de") {
@@ -47,10 +51,29 @@ function Home() {
         } else if (data.lang == "pt"){
           setLanguage("Portuguese")
         } 
-        setInputWord(word); // Update 'word' after API response
+        setInputWord(word)
+        if (data.error == true) {
+          setJoke(data.message)
+          if (langApi == "lang=de&") {
+            setLanguage("German")
+          } else if (langApi == "lang=en&") {
+            setLanguage("English")
+          } else if (langApi == "lang=fr&") {
+            setLanguage("French")
+          } else if (langApi == "lang=es&") {
+            setLanguage("Spanish")
+          } else if (langApi == "lang=cs&") {
+            setLanguage("Czech")
+          } else if (langApi == "lang=pt&") {
+            setLanguage("Portuguese")
+          }
+          setCategory(categoryApi)
+        }
       })
-      .catch(error => console.error('Error:', error))
-  };
+    .catch(error => {
+      console.error('Error fetching joke:', error)
+    })
+  }
   
 
 
