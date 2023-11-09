@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
-    margin: 8rem 0;
+    margin: 8rem 0 4rem 0;
     padding: 0 3rem;
     color: white;
 }
@@ -107,6 +107,9 @@
     gap: 2rem;
 }
 
+.sep{
+    display: none;
+}
 
 @media only screen and (max-width: 1280px) {
     .mainContent{
@@ -143,5 +146,9 @@
 
     .interact img{
         width: 35px;
+    }
+
+    .sep{
+        display: block;
     }
   }

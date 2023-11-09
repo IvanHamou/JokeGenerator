@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import './JokeDisplay.css'
 
-function JokeDisplay({buttonText}) {
+function JokeDisplay({buttonText, joke, category, language, inputWord}) {
   
   return (
     <div className='jokeDisplay'>
       <section className='filters'>
-        <h4>Category: Programming</h4>
-        <h4>Language: English</h4>
-        <h4>Includes Word: Java</h4>
+        <h4>Category: {category}</h4>
+        <h4>Language: {language}</h4>
+        <h4>Includes Word: {inputWord}</h4>
       </section>
       <section className='joke'>
-        <h2>Java is like Alzheimer's, it starts off slow, but eventually, your memory is gone.</h2>
+        <h2>{joke}</h2>
       </section>
       <section className='actionBtn'>
         <button>{buttonText}</button>
