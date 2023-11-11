@@ -5,6 +5,7 @@ import './Home.css'
 
 function Home() {
 
+  const [ data, setData] = useState("")
   const [joke, setJoke] = useState("")
   const [category, setCategory] = useState("")
   const [categoryApi, setCategoryApi] = useState("Programming")
@@ -37,6 +38,7 @@ function Home() {
       .then(response => response.json())
       .then(data => {
         console.log(data)
+        setData(data)
         setJoke(data.joke)
         setCategory(data.category)
         handleWord({ target: { value: word } })
@@ -127,7 +129,7 @@ function Home() {
         </section>
         <hr className='sep'/>
         <section className='sectionB'>
-          <JokeDisplay buttonText={"Add To Favorites"} joke={joke} category={category} language={language} inputWord={inputWord}/>
+          <JokeDisplay buttonText={"Add To Favorites"} joke={joke} category={category} language={language} inputWord={inputWord} data={data}/>
           <article className='interact'>
             <article className='rating'>
             {isHovered ? (

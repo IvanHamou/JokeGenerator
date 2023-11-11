@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './JokeDisplay.css'
+import StoreData from './StoreData'
 
-function JokeDisplay({buttonText, joke, category, language, inputWord}) {
+function JokeDisplay({buttonText, joke, category, language, inputWord, data}) {
   
   return (
     <div className='jokeDisplay'>
@@ -14,7 +15,7 @@ function JokeDisplay({buttonText, joke, category, language, inputWord}) {
         <h2>{joke}</h2>
       </section>
       <section className='actionBtn'>
-        <button>{buttonText}</button>
+        <StoreData buttonText={buttonText} joke={joke} category={category} language={language} inputWord={inputWord} data={data}/>
       </section>
       <section>
         <hr />
