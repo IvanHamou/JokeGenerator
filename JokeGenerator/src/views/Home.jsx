@@ -13,6 +13,8 @@ function Home() {
   const [word, setWord] = useState("")
   const [inputWord, setInputWord] = useState("")
 
+  const [isHovered, setIsHovered] = useState(false);
+
 
   function handleLangApi(event) {
     setLangApi(event.target.value)
@@ -128,11 +130,21 @@ function Home() {
           <JokeDisplay buttonText={"Add To Favorites"} joke={joke} category={category} language={language} inputWord={inputWord}/>
           <article className='interact'>
             <article className='rating'>
-              <img src="./src/assets/Vector (7).png" alt="star" />
-              <img src="./src/assets/Vector (7).png" alt="star" />
-              <img src="./src/assets/Vector (7).png" alt="star" />
-              <img src="./src/assets/Vector (7).png" alt="star" />
-              <img src="./src/assets/Vector (7).png" alt="star" />
+            {isHovered ? (
+        <img
+          src="./src/assets/Vector (7).png" // Replace with your yellow star image source
+          alt="Yellow Star"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        />
+      ) : (
+        <img
+          src="./src/assets/Vector (10).png" // Replace with your black star image source
+          alt="Black Star"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        />
+      )}
             </article>
             <article className='socialMedia'>
               <img src="./src/assets/Vector (8).png" alt="fb" />
