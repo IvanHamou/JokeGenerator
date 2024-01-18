@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Filter.css"
 
-function Filter() {
+function Filter({ allowedLanguages, onLanguageChange }) {
+
+  const [selectedLanguage, setSelectedLanguage] = useState("")
+
+  function handleLanguageChange(event) {
+    const selectedLanguage = event.target.value
+    setSelectedLanguage(selectedLanguage)
+    onLanguageChange(selectedLanguage)
+    
+  }
+
   return (
     <div className='filterPage'>
       <section className='filterTitle'>
@@ -21,13 +31,12 @@ function Filter() {
         </article>
         <article>
           <h4>Select Language</h4>
-          <select>
-            <option value="0">Czech</option>
-            <option value="1">German</option>
-            <option value="2">English</option>
-            <option value="3">Spanish</option>
-            <option value="4">French</option>
-            <option value="5">Portuguese</option>
+          <select value={selectedLanguage} onChange={handleLanguageChange}>
+            {allowedLanguages.map((language, index) => (
+              <option key={index} value={language}>
+                {language}
+              </option>
+            ))}
           </select>
         </article>
         <article>

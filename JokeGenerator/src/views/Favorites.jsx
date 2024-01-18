@@ -1,42 +1,56 @@
-import React, { useEffect, useState } from 'react'
-import Header from '../components/Header'
-import Filter from '../components/Filter'
-import JokeDisplay from '../components/JokeDisplay'
+import React, { useEffect, useState } from 'react';
+import Header from '../components/Header';
+import Filter from '../components/Filter';
+import JokeDisplay from '../components/JokeDisplay';
 
-function Favorites({setButtonText}) {
+function Favorites() {
+  const [activePage, setActivePage] = useState(true);
+  const [favoriteJokes, setFavoriteJokes] = useState([]);
+  const [filteredJokes, setFilteredJokes] = useState([]);
 
-  const [joke, setJoke] = useState("")
-  const [category, setCategory] = useState("")
-  const [language, setLanguage] = useState("")
-  const [inputWord, setInputWord] = useState("")
-
-  const [activePage, setActivePage] = useState(true)
-
-  const [favouriteJokes, setFavouriteJokes] = useState([]);
 
   useEffect(() => {
-      function getJokes() {
-          let data = JSON.parse(sessionStorage.getItem("savedJokes"));
-          if (data !== null) {
-              setFavouriteJokes(data);
-          }
-      }
-      getJokes();
+    function getJokes() {
+      const data = JSON.parse(sessionStorage.getItem("savedJokes")) || [];
+      setFavoriteJokes(data);
+      setFilteredJokes(data)
+    }
+    getJokes();
   }, []);
+
+  const updateFavoriteJokes = () => {
+    const data = JSON.parse(sessionStorage.getItem("savedJokes")) || [];
+    setFavoriteJokes(data);
+    setFilteredJokes(data)
+  };
+
+  const allowedLanguages = ["Czech", "German", "English", "Spanish", "French", "Portuguese"];
+
+  function handleLanguageChange(selectedLanguage) {
+    const filtered = favoriteJokes.filter(joke => joke.language === selectedLanguage);
+    setFilteredJokes(filtered);
+  }
+
 
 
   return (
     <div>
-      <Header activePage={activePage}/>
-      <Filter/>
+      <Header activePage={activePage} />
+      <Filter allowedLanguages={allowedLanguages} onLanguageChange={handleLanguageChange}/>
       <section className='jokeSection'>
-        <JokeDisplay buttonText={"Remove From Favorites"}/>
-        {favouriteJokes.map((dataInfo, index) => (
-            <JokeDisplay joke={dataInfo[0]} category={dataInfo[1]} language={dataInfo[2]} inputWord={dataInfo[3]} key={index}/>
+        {filteredJokes.map((dataInfo, index) => (
+          <JokeDisplay
+            key={index}
+            joke={dataInfo.joke}
+            category={dataInfo.category}
+            language={dataInfo.language}
+            inputWord={dataInfo.inputWord}
+            updateFavoriteJokes={updateFavoriteJokes}
+          />
         ))}
       </section>
     </div>
-  )
+  );
 }
 
-export default Favorites
+export default Favorites;

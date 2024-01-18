@@ -129,7 +129,7 @@ function Home() {
         </section>
         <hr className='sep'/>
         <section className='sectionB'>
-          <JokeDisplay buttonText={"Add To Favorites"} joke={joke} category={category} language={language} inputWord={inputWord} data={data}/>
+          <JokeDisplay joke={joke} category={category} language={language} inputWord={inputWord} data={data}/>
           <article className='interact'>
             <article className='rating'>
             {isHovered ? (

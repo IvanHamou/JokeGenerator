@@ -2,20 +2,23 @@ import React, { useState } from 'react'
 import './JokeDisplay.css'
 import StoreData from './StoreData'
 
-function JokeDisplay({buttonText, joke, category, language, inputWord, data}) {
+function JokeDisplay({joke, category, language, inputWord, dataInfo, updateFavoriteJokes}) {
+
+  dataInfo = {joke, category, language, inputWord}
+  console.log(dataInfo);
   
   return (
     <div className='jokeDisplay'>
       <section className='filters'>
-        <h4>Category: {category}</h4>
-        <h4>Language: {language}</h4>
-        <h4>Includes Word: {inputWord}</h4>
+        <h4>Category: {dataInfo.category}</h4>
+        <h4>Language: {dataInfo.language}</h4>
+        <h4>Includes Word: {dataInfo.inputWord}</h4>
       </section>
       <section className='joke'>
-        <h2>{joke}</h2>
+        <h2>{dataInfo.joke}</h2>
       </section>
       <section className='actionBtn'>
-        <StoreData buttonText={buttonText} joke={joke} category={category} language={language} inputWord={inputWord} data={data}/>
+        <StoreData dataInfo= {dataInfo} updateFavoriteJokes={updateFavoriteJokes}/>
       </section>
       <section>
         <hr />
