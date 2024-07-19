@@ -31,12 +31,19 @@ function Favorites() {
     setFilteredJokes(filtered);
   }
 
+  const allowedCategories = ["Programming", "Misc", "Dark", "Pun", "Spooky", "Christmas"];
+
+  function handleCategoryChange(selectedCategory) {
+    const filtered = favoriteJokes.filter(joke => joke.category === selectedCategory);
+    setFilteredJokes(filtered);
+  }
+
 
 
   return (
     <div>
       <Header activePage={activePage} />
-      <Filter allowedLanguages={allowedLanguages} onLanguageChange={handleLanguageChange}/>
+      <Filter allowedLanguages={allowedLanguages} onLanguageChange={handleLanguageChange} allowedCategories={allowedCategories} onCategoryChange={handleCategoryChange}/>
       <section className='jokeSection'>
         {filteredJokes.map((dataInfo, index) => (
           <JokeDisplay

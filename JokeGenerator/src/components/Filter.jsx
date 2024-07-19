@@ -1,14 +1,21 @@
 import React, { useState } from 'react'
 import "./Filter.css"
 
-function Filter({ allowedLanguages, onLanguageChange }) {
+function Filter({ allowedLanguages, onLanguageChange, allowedCategories, onCategoryChange }) {
 
   const [selectedLanguage, setSelectedLanguage] = useState("")
+  const [selectedCategory, setSelectedCategory] = useState("")
 
   function handleLanguageChange(event) {
     const selectedLanguage = event.target.value
     setSelectedLanguage(selectedLanguage)
     onLanguageChange(selectedLanguage)
+    
+  }
+  function handleCategoryChange(event) {
+    const selectedCategory = event.target.value
+    setSelectedCategory(selectedCategory)
+    onCategoryChange(selectedCategory)
     
   }
 
@@ -20,13 +27,12 @@ function Filter({ allowedLanguages, onLanguageChange }) {
       <section className='filterOptions'>
         <article>
           <h4>Select Category</h4>
-          <select>
-            <option value="0">Programming</option>
-            <option value="1">Misc</option>
-            <option value="2">Dark</option>
-            <option value="3">Pun</option>
-            <option value="4">Spooky</option>
-            <option value="5">Christmas</option>
+          <select value={selectedCategory} onChange={handleCategoryChange}>
+            {allowedCategories.map ((category, index) =>(
+              <option key={index} value={category}>
+                {category}
+              </option>
+            ))}
           </select>
         </article>
         <article>
